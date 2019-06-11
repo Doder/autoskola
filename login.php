@@ -1,24 +1,26 @@
 <?php
 
 include('pre-body.php');
+
 ?>
 <main class="login-main">
     <div class="login-box" style = "color:black">
-        <form action="">
+        <form action="log_in.php">
             <label for="username">Korisnicko ime:</label>
             <br>
-            <input type="text" id="username" placeholder="Unesite korisnicko ime...">
+            <input type="text" id="user" placeholder="Unesite korisnicko ime..." name="user">
             <br>
             <label for="password">Lozinka:</label>
             <br>
-            <input type="password" id="password" placeholder="Unesite lozinku...">
+            <input type="password" id="pass" placeholder="Unesite lozinku..." name = "pass">
             <br>
-            <input type="submit" value="Uloguj se">
+            <input type="submit" value="Uloguj se" name = "dugme">
         </form>
         <p class="info-small">Nemate nalog? <a href="register.php">Registruj se</a></p>
-    </div>
-    
+    </div> 
+
 </main>
 <?php
 include('post-body.php');
+
 ?>

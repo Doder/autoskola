@@ -8,9 +8,9 @@
         <img src="https://65e81151f52e248c552b-fe74cd567ea2f1228f846834bd67571e.ssl.cf1.rackcdn.com/ldm-images/2019-honda-fit-platinum-white.jpg" alt="">
     </div>
     <div class="slider-text">
-        <h1>Auto Skola Zeleno Signal</h1>
-        <p>Vrsimo obuke u kategorijama A,B,C,D</p>
-        <p>Najbolji instruktori ce vas nauciti sve sto vam treba za bezbjendnu voznju.</p>
+        <h1>Auto škola Zeleni Signal</h1>
+        <p>Vršimo obuku vozača za A, B, C, D i E kategorije. </p>
+        <p>Najbolji instruktori će Vas naučiti sve što treba za bezbjednu vožnju.</p>
     </div>
     <div class="info-container main-padding">
         <h1>Obavjestenja</h1>
