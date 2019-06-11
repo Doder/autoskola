@@ -7,7 +7,7 @@
     <div>
         <h1>Kontakt podaci</h1>
         <p><b>Broj telefona</b>: 069705888, 068321999</p>
-        <p><b>Email</b>: zelenosvijetlo@gmail.com</p>
+        <p><b>Email</b>: zelenisignal@gmail.com</p>
         <p><b>Adresa</b>: Novaka Ramova, Niksic</p>
     </div>
 </main>
