@@ -202,3 +202,19 @@ input{
     text-decoration: none;
     color: white;
 }
+
+textarea{
+    padding: 20px;
+}
+
+.new-post-container input, .new-post-container textarea{
+    margin: 10px 0;
+    border: 1px solid #b6b6b6;
+    width: 50%;
+}
+
+.new-post-container{
+    background: #F5FBEF;
+    color: black;
+    padding: 15px 20px;
+}
