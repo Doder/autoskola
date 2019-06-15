@@ -1,11 +1,11 @@
 <?php include('header.php') ?>
 <main>
     <div class="slider">
-        <img src="https://www.autokievit.nl/content/uploads/2017/05/1-renault-clio-serie-signature-iconic-700x380.jpg" alt="">
-        <img src="https://www.bazalinkova.com/wp-content/uploads/2014/05/rent-a-acr-Beograd.jpg" alt="">
-        <img src="https://ct.yimg.com/xd/api/res/1.2/1yHYoIceowlsybJbWlh72w--/YXBwaWQ9eXR3YXVjdGlvbnNlcnZpY2U7aD0zODE7cT04NTtyb3RhdGU9YXV0bzt3PTcwMA--/https://s.yimg.com/ob/image/47194374-e728-482b-aa0e-8f266353f4e5.jpg" alt="">
-        <img src="https://www.surf4cars.co.za/motoring-news/wp-content/uploads/2014/09/swift-1_1800x1800-700x380.jpg" alt="">
-        <img src="https://65e81151f52e248c552b-fe74cd567ea2f1228f846834bd67571e.ssl.cf1.rackcdn.com/ldm-images/2019-honda-fit-platinum-white.jpg" alt="">
+        <img src="img/clio.jpg" alt="clio">
+        <img src="img/golf.jpg" alt="golf">
+        <img src="img/yaris.jpg" alt="yaris">
+        <img src="img/suzuki.jpg" alt="suzuki">
+        <img src="img/honda.jpg" alt="honda">
     </div>
     <div class="slider-text">
         <h1>Auto škola Zeleni Signal</h1>
