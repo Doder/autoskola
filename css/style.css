@@ -87,6 +87,10 @@ footer{
     align-items: center;
 }
 
+.register-main > .login-box{
+    margin: 50px auto;
+}
+
 .login-box{
     background-color: white;
     padding: 30px 50px;

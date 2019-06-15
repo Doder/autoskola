@@ -2,7 +2,7 @@
 
 include('pre-body.php');
 ?>
-<main class="login-main">
+<main class="register-main">
     <div class="login-box" style = "color:black">
         <form action="register1.php">
             <label for="username">Korisnicko ime:</label>
