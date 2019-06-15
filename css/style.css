@@ -213,8 +213,22 @@ textarea{
     width: 50%;
 }
 
-.new-post-container{
+.new-post-container, .container-box{
     background: #F5FBEF;
     color: black;
     padding: 15px 20px;
+}
+
+.instruktori-table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.instruktori-table td, .instruktori-table th{
+    padding: 10px;
+    border-bottom: 1px solid #cacaca;
+}
+
+.instruktori-table th{
+    text-align: left;
 }

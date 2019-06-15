@@ -21,7 +21,7 @@
                     <a href="about.php">O nama</a>
                 </li>
                 <li>
-                    <a href="#">Instruktori</a>
+                    <a href="instruktori.php">Instruktori</a>
                 </li>
                 <li>
                     <a href="contact.php">Kontakt</a>
