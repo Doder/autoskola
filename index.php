@@ -14,50 +14,34 @@
     </div>
     <div class="info-container main-padding">
         <h1>Obavjestenja</h1>
-        <div class="post">
-            <img src="https://www.bazalinkova.com/wp-content/uploads/2014/05/rent-a-acr-Beograd.jpg" alt="" height="200px" >
-            <div>
-                <div class="post-title">
-                    <h2>Naslov</h2>
-                    <p class="post-date">03.01.2019</p>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illo sunt voluptate, obcaecati non deserunt placeat adipisci neque? Reiciendis illo quis eveniet sit provident in illum magni, maxime fugit culpa labore repellendus dolores enim consectetur cupiditate! Tenetur facilis error ullam numquam iure, harum libero neque voluptate! Libero natus illum voluptates?</p>
-                <a href="#" class="read-more">Procitaj vise</a>
-            </div>
-        </div>
-        <div class="post">
-            <img src="https://www.bazalinkova.com/wp-content/uploads/2014/05/rent-a-acr-Beograd.jpg" alt="" height="200px" >
-            <div>
-                <div class="post-title">
-                    <h2>Naslov</h2>
-                    <p class="post-date">03.01.2019</p>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illo sunt voluptate, obcaecati non deserunt placeat adipisci neque? Reiciendis illo quis eveniet sit provident in illum magni, maxime fugit culpa labore repellendus dolores enim consectetur cupiditate! Tenetur facilis error ullam numquam iure, harum libero neque voluptate! Libero natus illum voluptates?</p>
-                <a href="#" class="read-more">Procitaj vise</a>
-            </div>
-        </div>
-        <div class="post">
-            <img src="https://www.bazalinkova.com/wp-content/uploads/2014/05/rent-a-acr-Beograd.jpg" alt="" height="200px" >
-            <div>
-                <div class="post-title">
-                    <h2>Naslov</h2>
-                    <p class="post-date">03.01.2019</p>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illo sunt voluptate, obcaecati non deserunt placeat adipisci neque? Reiciendis illo quis eveniet sit provident in illum magni, maxime fugit culpa labore repellendus dolores enim consectetur cupiditate! Tenetur facilis error ullam numquam iure, harum libero neque voluptate! Libero natus illum voluptates?</p>
-                <a href="#" class="read-more">Procitaj vise</a>
-            </div>
-        </div>
-        <div class="post">
-            <img src="https://www.bazalinkova.com/wp-content/uploads/2014/05/rent-a-acr-Beograd.jpg" alt="" height="200px" >
-            <div>
-                <div class="post-title">
-                    <h2>Naslov</h2>
-                    <p class="post-date">03.01.2019</p>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illo sunt voluptate, obcaecati non deserunt placeat adipisci neque? Reiciendis illo quis eveniet sit provident in illum magni, maxime fugit culpa labore repellendus dolores enim consectetur cupiditate! Tenetur facilis error ullam numquam iure, harum libero neque voluptate! Libero natus illum voluptates?</p>
-                <a href="#" class="read-more">Procitaj vise</a>
-            </div>
-        </div>
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $db = "it_projekat";
+    // Create connection
+    $conn = new mysqli($servername, $username, $password,$db);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    $upit = 'SELECT * FROM post';
+    $response = $conn->query($upit);
+    while($row = $response->fetch_assoc()){
+        //$row['naslov'] datum, tekst, slika
+        $kraciTekst = substr($row['tekst'], 0, 300);
+        echo '<div class="post">';
+        echo '<img src="' . $row['slika'] . '" alt="post-image" width="300px">';
+        echo '<div><div class="post-title">';
+        echo '<h2>' . $row['naslov'] . '</h2>';
+        echo '<p class="post-date">' . $row['datum'] . '</p></div>';
+        echo '<p>' . $kraciTekst . '</p>';
+        echo '<a href="#" class="read-more">Procitaj vise</a></div></div>';
+    }
+
+    echo '';
+?>
     </div>
 </main>
 <?php include('footer.php') ?>

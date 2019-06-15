@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 $sql1 = "SELECT instruktor.id, instruktor.ime, instruktor.prezime, instruktor.slika
 FROM instruktor";
 
-$upit = $conn->query($sql1) or die($conn->error);
+$upit = $conn->query($sql1);
 
 echo "<table class=\"instruktori-table\">";
 echo "<tr>
