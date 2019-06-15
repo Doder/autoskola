@@ -29,7 +29,6 @@
     $upit = 'SELECT * FROM post';
     $response = $conn->query($upit);
     while($row = $response->fetch_assoc()){
-        //$row['naslov'] datum, tekst, slika
         $kraciTekst = substr($row['tekst'], 0, 300);
         echo '<div class="post">';
         echo '<img src="' . $row['slika'] . '" alt="post-image" width="300px">';
@@ -37,10 +36,9 @@
         echo '<h2>' . $row['naslov'] . '</h2>';
         echo '<p class="post-date">' . $row['datum'] . '</p></div>';
         echo '<p>' . $kraciTekst . '</p>';
-        echo '<a href="#" class="read-more">Procitaj vise</a></div></div>';
+        echo '<a href="post.php?post_id=' . $row['id'] . '" class="read-more">Procitaj vise</a></div></div>';
     }
 
-    echo '';
 ?>
     </div>
 </main>

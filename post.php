@@ -1,29 +1,49 @@
 <?php include('header.php') ?>
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $db = "it_projekat";
+    // Create connection
+    $conn = new mysqli($servername, $username, $password,$db);
+    
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $postID = $_GET['post_id'];
+    $sql1 = "SELECT * FROM post WHERE post.id = " . $postID;
+    
+    $upit = $conn->query($sql1);
+    $row = $upit->fetch_assoc();
+    if($row){
+        $naslov = $row['naslov'];
+        $tekst = $row['tekst'];
+        $slika = $row['slika'];
+        $datum = $row['datum'];
+    }
+    
+    
+?>
 <main class="main-padding main-margins">
-    <div>
-        <h1>Naslov</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam porro itaque reprehenderit consequuntur officiis. Quae sapiente quibusdam provident praesentium tempora ratione tenetur voluptatum quasi, necessitatibus laborum, placeat voluptas reprehenderit magni itaque ducimus optio, quia est. Hic dolorum alias unde iusto quas, laboriosam at doloremque magni qui porro doloribus facilis mollitia corrupti minima eligendi totam! Iure nostrum numquam recusandae quo obcaecati dolores possimus enim natus, aliquam corporis. Odio magni dolor minus, ullam asperiores voluptatibus odit obcaecati molestiae! Quam culpa repellat repudiandae obcaecati architecto eos natus et ipsa esse saepe quasi pariatur soluta necessitatibus, voluptatum maxime alias odit maiores dicta debitis cupiditate?</p>
-    </div>
-    <div>
-        <h1>Komentari</h1>
+    <div class="container-box post-container">
+        <img width="300px" src="<?php echo $slika ?>" alt="post image">
         <div>
-            <div>
+            <h1><?php echo $naslov ?></h1>
+            <p><?php echo $tekst ?></p>
+            <p class="post-d"><?php echo $datum ?></p>
+        </div>
+    </div>
+    <div class="comment-section">
+        <h1>Komentari</h1>
+        <div class="comments">
+            <div class="single-comment">
                 <h3>Anton 30.01.2019</h3>
                 <p>Meni je ovo bas super :)</p>
-            </div>
-            
-            <div>
-                <h3>Milos 01.02.2019</h3>
-                <p>Pozdrav :)</p>
-            </div>
-            
-            <div>
-                <h3>Ana 05.06.2019</h3>
-                <p>Kad je polaganje. Hvala.</p>
-            </div>
-            
+            </div>            
         </div>
-        <textarea placeholder="Ostavi komentar ovdje..." name="comment" id="comment" cols="60" rows="5"></textarea>
+        <textarea placeholder="Ostavi komentar ovdje..." name="comment" id="comment" cols="60" rows="2"></textarea>
+        <br>
         <br>
         <a href="#" class="read-more">Ostavi komentar</a>
     </div>
