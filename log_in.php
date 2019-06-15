@@ -19,7 +19,17 @@ $sql = "SELECT * FROM login WHERE ime='$ime' and sifra='$sifra' ";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) 
 {
-   header("Location: about.php");
+    session_start();
+    $row = $result->fetch_assoc();
+    $_SESSION['username'] = $row['ime'];
+    if($ime == 'admin'){
+        $_SESSION['user_type'] = 'admin';
+    }
+    else{   
+        $_SESSION['user_type'] = 'user';
+    }
+    
+   header("Location: index.php");
 }
 else 
 {

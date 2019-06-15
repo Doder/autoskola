@@ -37,15 +37,21 @@
     <div class="comment-section">
         <h1>Komentari</h1>
         <div class="comments">
-            <div class="single-comment">
+            <div class="single-comment container-box">
                 <h3>Anton 30.01.2019</h3>
                 <p>Meni je ovo bas super :)</p>
             </div>            
         </div>
-        <textarea placeholder="Ostavi komentar ovdje..." name="comment" id="comment" cols="60" rows="2"></textarea>
-        <br>
-        <br>
-        <a href="#" class="read-more">Ostavi komentar</a>
+        <?php 
+        
+        if (isset($_SESSION['user_type'])) {
+            echo '
+            <textarea placeholder="Ostavi komentar ovdje..." name="comment" id="comment" cols="60" rows="2"></textarea>
+            <br>
+            <br>
+            <a href="#" class="read-more">Ostavi komentar</a>';
+        } ?>
+        
     </div>
     
 </main>

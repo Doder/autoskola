@@ -1,5 +1,5 @@
 <footer>
-        <p>2019 © Aleksa Doderovic, Kristina Papic</p>
+        <p>2019 © Zeleni Signal</p>
     </footer>
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"

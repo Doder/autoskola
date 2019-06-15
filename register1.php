@@ -38,7 +38,7 @@ $telefon = $_GET['brojtel'];
 $sql2 = "INSERT INTO korisnik(ime, prezime, datum_rodjenja, email, telefon, testovi, voznja, imelogin) VALUES ('$ime','$prezime','$datum','$email','$telefon',0,0,'$imelogin')";
 if ($conn->query($sql2) === TRUE) 
 {
-    header("Location: profil_korisnika.php");
+    header("Location: index.php");
 } 
 
 $conn->close();

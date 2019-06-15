@@ -27,13 +27,25 @@
                     <a href="contact.php">Kontakt</a>
                 </li>
             </ul>
-            <ul class="nav-right">
-                <li>
-                    <a href="login.php">Uloguj se</a>
-                </li>
-                <li>
-                    <a href="register.php">Registruj se</a>
-                </li>
-            </ul>
+            <?php
+            session_start();
+            if(isset($_SESSION['user_type'])){
+                echo '<ul class="nav-right">';
+                echo '<li><span>' . $_SESSION['username'] . '</span></li>';
+                echo '<li><a href="logout.php">Izloguj se</a></li></ul>';
+            }
+            else{
+                echo '
+                <ul class="nav-right">
+                    <li>
+                        <a href="login.php">Uloguj se</a>
+                    </li>
+                    <li>
+                        <a href="register.php">Registruj se</a>
+                    </li>
+                </ul>
+                ';
+            } ?>
+            
         </nav>
     </header>
