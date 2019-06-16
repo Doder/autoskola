@@ -32,7 +32,7 @@
         $kraciTekst = substr($row['tekst'], 0, 300);
         echo '<div class="post">';
         echo '<img src="' . $row['slika'] . '" alt="post-image" width="300px">';
-        echo '<div><div class="post-title">';
+        echo '<div style="width:100%;"><div class="post-title">';
         echo '<h2>' . $row['naslov'] . '</h2>';
         echo '<p class="post-date">' . $row['datum'] . '</p></div>';
         echo '<p>' . $kraciTekst . '</p>';
