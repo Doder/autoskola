@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,9 +29,14 @@
                 <li>
                     <a href="contact.php">Kontakt</a>
                 </li>
+                <?php 
+                if(isset($_SESSION['user_type']) and $_SESSION['user_type'] == 'admin'){
+                    echo '<li><a href="new_post.php">Dodaj objavu</a></li>';
+                }
+                ?>
             </ul>
             <?php
-            session_start();
+            
             if(isset($_SESSION['user_type'])){
                 echo '<ul class="nav-right">';
                 echo '<li><span>' . $_SESSION['username'] . '</span></li>';

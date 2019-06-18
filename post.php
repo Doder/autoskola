@@ -21,7 +21,11 @@
         $tekst = $row['tekst'];
         $slika = $row['slika'];
         $datum = $row['datum'];
+        $id = $row['id'];
     }
+    
+    $sql2 = "SELECT * FROM komentari WHERE id_posta = '$id'";
+    $upit = $conn->query($sql2);
     
     
 ?>
@@ -37,19 +41,33 @@
     <div class="comment-section">
         <h1>Komentari</h1>
         <div class="comments">
-            <div class="single-comment container-box">
-                <h3>Anton 30.01.2019</h3>
-                <p>Meni je ovo bas super :)</p>
-            </div>            
+            <?php
+                while($row2 = $upit->fetch_assoc()){
+                    $id_korisnika = $row2["id_korsinika"];
+                    $datum_posta = $row2["datum"];
+                    $tekst = $row2["tekst"];
+                    $sql3 = 'SELECT imelogin from korisnik WHERE id = ' . $id_korisnika;
+                    $upit = $conn->query($sql3) or die($conn->error);
+                    $username = $upit->fetch_assoc()['imelogin'];
+                    echo "
+                    <div class=\"single-comment container-box\">
+                        <h3>$username, <small>$datum_posta</small></h3>
+                        <p>$tekst</p>
+                    </div> 
+                    ";
+                }
+            ?>           
         </div>
         <?php 
         
         if (isset($_SESSION['user_type'])) {
             echo '
-            <textarea placeholder="Ostavi komentar ovdje..." name="comment" id="comment" cols="60" rows="2"></textarea>
-            <br>
-            <br>
-            <a href="#" class="read-more">Ostavi komentar</a>';
+            <form method="post" action="add_comment.php">
+                <textarea placeholder="Ostavi komentar ovdje..." name="comment" id="comment" cols="60" rows="2"></textarea>
+                <br>
+                <input type="hidden" name="id" value="$postID" />
+                <input type="submit" class="read-more" value="Ostavi komentar">
+            </form>';
         } ?>
         
     </div>

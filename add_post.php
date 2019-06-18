@@ -37,11 +37,11 @@ if (($_FILES['post-image']['name']!="")){
         $sql = "INSERT INTO post(naslov, datum, tekst, slika) VALUES ('$naslov', '$datum', '$tekst', '$slika')";
         if ($conn->query($sql) === TRUE) 
         {
-            //header("Location: index.php");
+            header("Location: index.php");
         } 
     }
 
     $conn->close();
 }
 
-//header('Location: index.php');
+header('Location: index.php');
