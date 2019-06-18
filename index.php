@@ -1,4 +1,5 @@
-<?php include('header.php') ?>
+<?php include('header.php');
+?>
 <main>
     <div class="slider">
         <img src="img/clio.jpg" alt="clio">
@@ -12,8 +13,12 @@
         <p>Vršimo obuku vozača za A, B, C, D i E kategorije. </p>
         <p>Najbolji instruktori će Vas naučiti sve što treba za bezbjednu vožnju.</p>
     </div>
-    <div class="info-container main-padding">
+    <div id="obavjestenja" class="info-container main-padding">
         <h1>Obavjestenja</h1>
+        <form action="index.php#obavjestenja" method="get">
+            <input type="text" name="term" id="term" placeholder="Naslov za pretragu...">
+            <input style="padding: 11px 25px;" type="submit" value="Pretraži">
+        </form>
 <?php
     $servername = "localhost";
     $username = "root";
@@ -27,7 +32,10 @@
         die("Connection failed: " . $conn->connect_error);
     } 
     $upit = 'SELECT * FROM post';
-    $response = $conn->query($upit);
+    if(isset($_GET['term'])){
+        $upit = "SELECT * FROM post WHERE naslov LIKE '" . $_GET['term'] . "%'";
+    }
+    $response = $conn->query($upit) or die($conn->error);
     while($row = $response->fetch_assoc()){
         $kraciTekst = substr($row['tekst'], 0, 300);
         echo '<div class="post">';
