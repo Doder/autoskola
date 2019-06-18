@@ -4,7 +4,7 @@ include('pre-body.php');
 ?>
 <main class="register-main">
     <div class="login-box" style = "color:black">
-        <form action="register1.php">
+        <form action="register1.php" onsubmit="return onSubmit()">
             <label for="username">Korisnicko ime:</label>
             <br>
             <input type="text" id="username" placeholder="Unesite korisnicko ime..." name = "user">
@@ -16,6 +16,7 @@ include('pre-body.php');
             <label for="password2">Ponovi lozinku:</label>
             <br>
             <input type="password" id="password2" placeholder="Ponovite lozinku..." name = "pass2">
+            <p class="error-message" id="password-error" style="display: none;"></p>
             <br>
             <label for="username">Ime:</label>
             <br>
@@ -29,9 +30,11 @@ include('pre-body.php');
             <br>
             <input type="date" id="datum" name = "datumr">
             <br>
+            <p class="error-message" id="date-error" style="display: none;"></p>
             <label>Email:</label>
             <br>
             <input type="email" id="eadresa" placeholder="Email" name = "mail">
+            <p class="error-message" id="email-error" style="display: none;"></p>
             <br>
             <label>Broj telefona:</label>
             <br>

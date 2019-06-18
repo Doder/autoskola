@@ -13,6 +13,10 @@ include('pre-body.php');
             <label for="password">Lozinka:</label>
             <br>
             <input type="password" id="pass" placeholder="Unesite lozinku..." name = "pass">
+            <?php if(isset($_GET['error']) and $_GET['error'] == 1){
+                echo '<p class="error-message">Pogresno korisnicko ime ili lozinka</p>';
+            }
+            ?>
             <br>
             <input type="submit" value="Uloguj se" name = "dugme">
         </form>

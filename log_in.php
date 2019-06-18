@@ -33,8 +33,7 @@ if ($result->num_rows > 0)
 }
 else 
 {
-    header("Location: login.php");
-    
+    header("Location: login.php?error=1");
 }
 $conn->close();
 

@@ -265,3 +265,7 @@ textarea{
     right: 15px;
     bottom: 5px;
 }
+
+.error-message{
+    color: red;
+}

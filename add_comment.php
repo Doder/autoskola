@@ -17,9 +17,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql2 = "SELECT ime FROM login WHERE imelogin = '$user_name'";
+$sql2 = "SELECT ime FROM login WHERE ime = '$user_name'";
 $upit2 = $conn->query($sql2) or die($conn->error);
-$imelogin = $upit2->fetch_assoc()['imelogin'];
+$imelogin = $upit2->fetch_assoc()['ime'];
 
 
 $sql = "INSERT into komentari(imelogin,id_posta,tekst,datum) VALUES ('$imelogin', '$id_posta', '$komentar', '$datum')";
