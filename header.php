@@ -32,6 +32,9 @@
                 <?php 
                 if(isset($_SESSION['user_type']) and $_SESSION['user_type'] == 'admin'){
                     echo '<li><a href="new_post.php">Dodaj objavu</a></li>';
+                    echo '<li><a href="dodajIns.php">Dodaj Instruktora</a></li>';
+                }else if(isset($_SESSION['user_type']) and $_SESSION['user_type'] == 'user'){
+                    echo '<li><a href="izaberiIns.php">Izaberi Instruktora</a></li>';
                 }
                 ?>
             </ul>
